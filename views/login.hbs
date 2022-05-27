@@ -1,1 +1,16 @@
-<h1>Login</h1>
+<h1 class="text-center my-5">Log In</h1>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form action="/auth/login" method="post">
+            <!-- Seguridad csurf -->
+            <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+            <h5>Email</h5>
+            <!-- No type email para validar en backend -->
+            <input type="text" name="email" placeholder="Ingrese su email" class="form-control mb-2">
+            <h5>Clave</h5>
+            <input type="password" name="password" placeholder="Ingrese su clave" class="form-control mb-2">
+            <input type="submit" value="Acceder" class="btn btn-primary">
+            <a href="/auth/register" class="link-secondary mx-2">Registrar usuario</a>
+        </form>
+    </div>
+</div>

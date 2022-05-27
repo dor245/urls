@@ -1,10 +1,9 @@
 <div class="card" style="width: 18rem;">
-    <img src={{this.img}} class="card-img-top" alt={{item.texto}}>
-    <div class="card-body">
-        <h5 class="card-title">{{item.texto}}</h5>
-        <p class="card-text"> {{item.subtitulo}}</p>
-    </div>
-    <div class="card-body">
-        <a href="#" class="btn btn-primary">Ver ahora</a>
-    </div>
+  <div class="card-body">
+    <h5 class="card-title">{{item.origin}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{item.shortUrl}}</h6>
+    <a href="/eliminar/{{item._id}}" class="btn btn-danger">Eliminar</a>
+    <a href="/editar/{{item._id}}" class="btn btn-warning">Editar</a>
+    <button data-short="{{item.shortUrl}}" class="btn btn-info">Copiar</button>
+  </div>
 </div>

@@ -18,6 +18,8 @@ const { create } = require("express-handlebars");
 const csurf = require("csurf");
 //importar libreria request
 const req = require("express/lib/request");
+//PRUEBA body-parser
+//const bodyParser = require("body-parser");
 //importar modelo User de la BBDD
 const User = require("./models/user");
 //hacer uso variables de entorno
@@ -86,6 +88,8 @@ app.use((req, res, next) => {
     res.locals.mensajes = req.flash("mensajes");
     next();
 });
+/*app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));*/
 //como usar router una vez exportado
 app.use("/", require("./routes/home"));
 app.use("/auth", require("./routes/auth"));

@@ -31,15 +31,18 @@ const agregarUrl = async (req, res) => {
         if (dbCons.user.equals(req.user.id)) {
             await url.remove();
             req.flash("mensajes", [{ msg: "Ya tienes Agregada esta URL" }]);
+            //redirigir a la pagina home
+            return res.redirect("/");
+        }
+    } catch (error) {
+        if (error instanceof TypeError) {
+            req.flash("mensajes", [{ msg: "URL agregada" }]);
+            return res.redirect("/");
+        } else {
+            req.flash("mensajes", [{ msg: error.message }]);
+            return res.redirect("/");
         }
 
-        //redirigir a la pagina home
-        return res.redirect("/");
-
-
-    } catch (error) {
-        req.flash("mensajes", [{ msg: "URL agregada" }]);
-        return res.redirect("/");
     }
 }
 const eliminarUrl = async (req, res) => {

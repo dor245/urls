@@ -6,10 +6,10 @@
     <input type="submit" value="Editar URL" class="btn btn-warning w-100 mb-2">
 </form>
     {{else}}
-    <form action="/" method="post">
+    <form class="mx-2 mb-2" action="/" method="post">
     <!-- Seguridad csurf -->
         <input type="hidden" name="_csrf" value="{{csrfToken}}" />
         <input type="text" placeholder="ingresar url" name="origin" class="form-control my-2">
-        <input type="submit" value="Agregar URL" class="btn btn-primary w-100 mb-2">
+        <input type="submit" value="Agregar URL" class="btn btn-primary w-100">
     </form>
 {{/if}}

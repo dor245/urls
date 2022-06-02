@@ -22,7 +22,10 @@ const agregarUrl = async (req, res) => {
     //Revisar tiene truco
     try {
         const { origin } = req.body;
-        const dbCons = await Url.findOne(req.body);
+        const dbCons = await Url.findOne({origin});
+        if (req.user.id == null) {
+           return console.log("nulo");
+        }
         //instancia de una URL
         const url = new Url({ origin: origin, shortUrl: nanoid(8), user: req.user.id });
         //Guardar en BBDD

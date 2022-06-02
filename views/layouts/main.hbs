@@ -16,11 +16,12 @@
     {{> Navbar}}
     <!-- importar contenido de home o de x para hacer paginas dinamicas -->
     <div class="container mt-3">
+        <div class="row">
         {{#each mensajes }}
             <div class="alert alert-dark mb-2">{{this.msg}}</div>
         {{/each}}
-
         {{{body}}}
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
